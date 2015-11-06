@@ -59,19 +59,20 @@ public class BGPIdleState implements BGPConstants, BGPState
 
 			case ManualStart:
 			case AutomaticStart:
-				// int connectRetryCounter = 0;
+				 int connectRetryCounter = 0;
 
-				// while ((!fsm.isConnected()) && connectRetryCounter++ <
-				// BGP_CONNECT_RETRIES)
-				// fsm.connect();
-				//
-				// if (fsm.isConnected())
-				// {
-				// fsm.getSession().start();
-				// fsm.sendPacket(fsm.generateOpenMessage());
-				// fsm.setCurrentState(fsm.getOpenSentState());
-				// }
-				// else
+				 while ((!fsm.isConnected()) && connectRetryCounter++ <
+				 BGP_CONNECT_RETRIES)
+				 fsm.connect();
+
+				 if (fsm.isConnected())
+				 {
+				 fsm.getSession().start();
+				 fsm.sendPacket(fsm.generateOpenMessage());
+				 fsm.sendPacket(fsm.generateKeepaliveMessage());
+				 fsm.setCurrentState(fsm.getOpenSentState());
+				 }
+				 else
 				fsm.setCurrentState(fsm.getActiveState());
 			break;
 
