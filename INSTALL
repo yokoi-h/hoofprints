@@ -25,28 +25,28 @@ If you made any changes to the file above, please open * conf/quagga.xml * and
 edit the file accordingly.
 
 If you decide that it's time to setup the network run the following commands:
-$ ant -f tasks/build.xml setupAddresses
-$ ant -f tasks/build.xml setupQuaggaAddress
+$ ant -f build.xml setupAddresses
+$ ant -f build.xml setupQuaggaAddress
 
 
 Go to the hoofprints root directory and type the following:
-$ ant -f tasks/build.xml compileQuagga
+$ ant -f build.xml compileQuagga
 
 When this script has finished, there should be a new installation of Quagga in
 tmp/build/quagga-0.99.15. Please verify that Quagga has been installed to the 
 right place.
 
 Now compile Hoofprints:
-$ ant -f tasks/build.xml compile
+$ ant -f build.xml compile
 
 
 
 Now you're ready to go:
 
 To run a testcase that connects a lot of clients, type:
-$ ant -f tasks/build.xml T1
+$ ant -f build.xml T1
 
 To send a lot of prefixes, type:
-$ ant -f tasks/build.xml T2
+$ ant -f build.xml T2
 
 
