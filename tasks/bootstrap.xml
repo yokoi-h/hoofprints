@@ -1,5 +1,5 @@
 <project name="Hoofprints Bootstrap" default="compile" basedir="..">
-	<property file="../conf/test.properties" />
+	<property file="./conf/test.properties" />
 	
 	<target name="compile">
 		<javac destdir="${build.home}">
